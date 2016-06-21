@@ -84,7 +84,7 @@ public class SearchView extends FrameLayout implements View.OnClickListener {
     private String mVoiceSearchText = "Speak now";
     private int mVersion = VERSION_TOOLBAR;
     private int mAnimationDuration = ANIMATION_DURATION;
-    private float mIsSearchArrowHamburgerState = SearchArrowDrawable.STATE_HAMBURGER;
+    public float mIsSearchArrowHamburgerState = SearchArrowDrawable.STATE_HAMBURGER;
     private boolean mShadow = true;
     private boolean mVoice = true;
     private boolean mIsSearchOpen = false;
@@ -689,7 +689,7 @@ public class SearchView extends FrameLayout implements View.OnClickListener {
         }
     }
 
-    private void setArrow() {
+    public void setArrow() {
         if (mSearchArrow != null) {
             mSearchArrow.setVerticalMirror(false);
             mSearchArrow.animate(SearchArrowDrawable.STATE_ARROW, mAnimationDuration);
