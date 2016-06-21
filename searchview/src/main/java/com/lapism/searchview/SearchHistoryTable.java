@@ -66,7 +66,7 @@ public class SearchHistoryTable {
         String selectQuery =
                 "SELECT * FROM " + SearchHistoryDatabase.SEARCH_HISTORY_TABLE +
                         " ORDER BY " + SearchHistoryDatabase.SEARCH_HISTORY_COLUMN_ID +
-                        " DESC LIMIT 2";
+                        " DESC";
 
         db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
