@@ -88,9 +88,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 mResultList.clear();
-                if (!SearchSessionSettings.getInstance().isShowed()) {
-                    SearchSessionSettings.getInstance().setShowed(true);
-                } else if (results.values != null) {
+                if (results.values != null) {
                     List<?> result = (ArrayList<?>) results.values;
                     for (Object object : result) {
                         if (object instanceof SearchItem) {
