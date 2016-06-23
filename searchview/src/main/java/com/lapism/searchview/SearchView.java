@@ -237,6 +237,7 @@ public class SearchView extends FrameLayout implements View.OnClickListener {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
                     addFocus();
+                    SearchView.this.onTextChanged(mEditText.getText());
                 } else {
                     removeFocus();
                 }

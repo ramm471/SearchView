@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultViewHolder> implements Filterable {
 
@@ -89,8 +88,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ResultView
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 mResultList.clear();
-
-                if (results.values != null) {
+                if (!SearchSessionSettings.getInstance().isShowed()) {
+                    SearchSessionSettings.getInstance().setShowed(true);
+                } else if (results.values != null) {
                     List<?> result = (ArrayList<?>) results.values;
                     for (Object object : result) {
                         if (object instanceof SearchItem) {
@@ -183,7 +183,6 @@ editor.apply();*/
 //         s.removeSpan(new ForegroundColorSpan(SearchView.getTextColor()));
 //         viewHolder.text.setText(s, TextView.BufferType.SPANNABLE);
 // @ColorRes, Filter.FilterListener
-
 
 // TODO ANALYSE
 // TODO file:///E:/Android/SearchView/sample/build/outputs/lint-results-debug.html
